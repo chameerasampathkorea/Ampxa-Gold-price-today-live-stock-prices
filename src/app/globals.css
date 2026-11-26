@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --ink: #0f172a;
+  --muted: #5b6474;
+  --line: #e3e6eb;
+  --gold: #a87408;
+  --gold-soft: #fbf3df;
+  --accent: #1d4ed8;
+  --up: #0a7d3c;
+  --down: #c62828;
+  --up-soft: #e6f4ec;
+  --down-soft: #fbeaea;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0e14;
+    --surface: #121722;
+    --surface-2: #1a2130;
+    --ink: #e8ecf3;
+    --muted: #9aa4b5;
+    --line: #253043;
+    --gold: #f2b84b;
+    --gold-soft: #2a2213;
+    --accent: #7aa2ff;
+    --up: #3ccf7a;
+    --down: #ff6b6b;
+    --up-soft: #12271c;
+    --down-soft: #2c1617;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-accent: var(--accent);
+  --color-up: var(--up);
+  --color-down: var(--down);
+  --color-up-soft: var(--up-soft);
+  --color-down-soft: var(--down-soft);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+/* Let wide tables scroll inside their card instead of stretching grid columns on phones. */
+.grid > * {
+  min-width: 0;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.prose-ax p {
+  margin: 0 0 0.9rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.prose-ax h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 2rem 0 0.75rem;
+  color: var(--ink);
+}
+.prose-ax h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--ink);
+}
+.prose-ax ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0 0 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.prose-ax a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-ax strong {
+  color: var(--ink);
+}
+
+.flash-up {
+  animation: flash-up 1.2s ease-out;
+}
+.flash-down {
+  animation: flash-down 1.2s ease-out;
+}
+@keyframes flash-up {
+  from { background: var(--up-soft); }
+  to { background: transparent; }
+}
+@keyframes flash-down {
+  from { background: var(--down-soft); }
+  to { background: transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .flash-up,
+  .flash-down {
+    animation: none;
+  }
+}

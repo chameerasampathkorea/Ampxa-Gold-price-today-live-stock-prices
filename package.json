@@ -1,0 +1,50 @@
+{
+  "name": "ampxa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AmpXa — live gold price today per gram, ounce and karat (24K, 22K, 18K, 14K) in USD, CAD and 25 currencies, plus live stock prices for the USA and Canada. Next.js on Cloudflare Workers.",
+  "homepage": "https://ampxa.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chameerasampathkorea/ampxa.git"
+  },
+  "keywords": [
+    "gold price today",
+    "gold price per gram",
+    "gold rate today",
+    "stock price today",
+    "live stock prices",
+    "gold calculator",
+    "nextjs",
+    "cloudflare-workers",
+    "seo"
+  ],
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "start": "next start",
+    "lint": "eslint",
+    "keywords": "node --no-warnings scripts/keyword-map.ts",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+  },
+  "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.15",
+    "next": "16.4.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.4",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "wrangler": "^4.157.0"
+  }
+}
